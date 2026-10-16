@@ -78,9 +78,9 @@ body{
 .login-brand{
   position:relative; overflow:hidden;
   background:linear-gradient(160deg, var(--blue-900) 0%, var(--blue-700) 42%, var(--green-700) 78%, var(--green-600) 100%);
-  padding:44px; display:flex; flex-direction:column; justify-content:space-between; color:var(--white);
+  padding:44px; display:flex; flex-direction:column; color:var(--white);
 }
-.login-brand-copy{ max-width:380px; margin-top:80px; }
+.login-brand-copy{ max-width:400px; margin-top:40px; }
 .login-brand-copy h1{ font-family:var(--font-display); font-size:34px; font-weight:500; line-height:1.25; margin:18px 0 12px; }
 .login-brand-copy p{ font-size:14px; line-height:1.6; color:rgba(255,255,255,.8); }
 .login-brand-wave{ position:absolute; bottom:0; left:0; width:100%; }

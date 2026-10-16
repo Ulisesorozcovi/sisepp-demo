@@ -15,6 +15,10 @@
 
 > **Demo de portafolio con datos ficticios.** No está afiliado a ninguna entidad gubernamental. Licencia MIT.
 
+<p align="center">
+  <img src="docs/login-screenshot.jpg" alt="SISEPP Login" width="720" />
+</p>
+
 ---
 
 ## Qué es SISEPP
