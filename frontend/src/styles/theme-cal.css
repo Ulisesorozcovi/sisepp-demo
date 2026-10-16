@@ -1,0 +1,141 @@
+/* ENSAYO — capa de tema monocromo. Se carga DESPUÉS de global.css.
+   Para descartar el ensayo basta con quitar su import en main.tsx. */
+
+body{ background:var(--canvas); color:var(--body); -webkit-font-smoothing:antialiased; letter-spacing:0; }
+
+/* ---- Titulares: Inter 600 con tracking negativo ---- */
+h1,h2,h3,
+.page-header h1,.dashboard-header h1,.home-hero h1,.planning-header h1,
+.login-form-card h2,.login-brand-copy h1,.form-card-title,.modal-card h3,
+.home-card-title,.dash-kpi-value,.modal-content h2{
+  font-family:var(--font-display); font-weight:600; color:var(--ink); letter-spacing:var(--track-display);
+}
+.page-header h1,.dashboard-header h1,.planning-header h1{ font-size:30px; line-height:1.15; letter-spacing:-0.045em; }
+.home-hero h1{ font-size:40px; line-height:1.1; letter-spacing:-0.05em; }
+.login-form-card h2{ font-size:30px; letter-spacing:-0.045em; }
+.dash-kpi-value{ font-size:36px; letter-spacing:-0.045em; }
+
+/* ---- Botones ---- */
+.atom-btn,.btn-primary,.btn-secondary,.btn-create{
+  height:40px; display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:0 20px; border-radius:var(--radius-sm); font-weight:600; font-size:14px; line-height:1;
+  transition:background .15s ease, border-color .15s ease;
+}
+.atom-btn--primary,.btn-primary,.btn-create{ background:var(--primary); color:#fff; border:1px solid var(--primary); }
+.atom-btn--primary:hover,.btn-primary:hover,.btn-create:hover{ background:var(--primary-active); }
+.atom-btn--primary:disabled,.btn-primary:disabled,.btn-create:disabled{ background:var(--surface-strong); border-color:var(--surface-strong); color:var(--muted-soft); }
+.atom-btn--ghost,.atom-btn--outline,.btn-secondary{
+  background:var(--canvas); color:var(--ink); border:1px solid var(--hairline);
+}
+.atom-btn--ghost:hover,.atom-btn--outline:hover,.btn-secondary:hover{ background:var(--surface-soft); border-color:var(--surface-strong); }
+
+/* ---- Inputs ---- */
+.atom-input,.atom-select,.annual-table__input{
+  height:40px; padding:0 14px; border-radius:var(--radius-sm); border:1px solid var(--hairline);
+  color:var(--ink); background:var(--canvas);
+}
+textarea.atom-input,.atom-textarea{ height:auto; padding:10px 14px; }
+.atom-input:focus,.atom-select:focus{ border-color:var(--ink); box-shadow:0 0 0 3px rgba(17,17,17,.08); }
+.atom-label,.form-label{ color:var(--ink); font-weight:600; font-size:13px; }
+
+/* ---- Badges / pills ---- */
+.atom-badge,.task-status-pill,.followup-status-pill,.goal-badge,.coordinator-chip,.tree-coordinator{
+  border-radius:9999px; font-weight:500; font-size:12px; padding:3px 10px;
+}
+.atom-badge--tecnico{ background:#DBEAFE; color:#1D4ED8; }
+.atom-badge--inactivo,.task-status-pill--no_aplica,.task-status-pill--cancelada,
+.followup-status-pill--no_aplica,.goal-badge--zero{ background:var(--surface-card); color:var(--muted); }
+
+/* ---- Avatares pastel ---- */
+.atom-avatar{ width:36px; height:36px; background:var(--surface-card); color:var(--ink); font-size:13px; }
+.sidebar-user-avatar{ width:36px; height:36px; background:#8B5CF6; color:#fff; }
+
+/* ---- Login ---- */
+.login-brand{ background:var(--surface-card); color:var(--ink); }
+.login-brand .atom-logo span{ color:var(--ink); }
+.login-brand-copy h1{ font-size:40px; line-height:1.1; letter-spacing:-0.05em; color:var(--ink); }
+.login-brand-copy p{ color:var(--muted); }
+.login-brand-wave{ display:none; }
+.login-form-side{ background:var(--canvas); }
+.login-form-card .eyebrow{ color:var(--muted); }
+.login-footer-link a{ color:var(--ink); text-decoration:underline; text-underline-offset:3px; }
+.login-form-card .atom-btn--primary{ height:44px; }
+
+/* ---- Sidebar clara con pill activa ---- */
+.sidebar{ background:var(--canvas); border-right:1px solid var(--hairline); }
+.sidebar-header,.sidebar-footer,.sidebar-notifications{ border-color:var(--hairline); }
+.sidebar .atom-logo span{ color:var(--ink); }
+.sidebar-toggle{ color:var(--muted-soft); }
+.sidebar-toggle:hover{ color:var(--ink); }
+.sidebar-item{ color:var(--muted); font-weight:500; font-size:14px; position:relative; }
+.sidebar-item:hover{ background:var(--surface-soft); color:var(--ink); }
+.sidebar-item--active{ background:var(--surface-card); color:var(--ink); font-weight:600; box-shadow:var(--shadow-1); }
+.sidebar-item--active::before{ display:none; }
+.sidebar-user-name{ color:var(--ink); }
+.sidebar-user-role{ color:var(--muted); }
+.sidebar-logout{ color:var(--muted); }
+.sidebar-logout:hover{ color:var(--danger); background:var(--danger-bg); }
+.notification-bell__trigger{ color:var(--muted); }
+.notification-bell__trigger:hover{ color:var(--ink); }
+.notification-bell__dropdown{ border:1px solid var(--hairline); box-shadow:var(--shadow-2); border-radius:var(--radius-md); }
+.notification-bell__item--unread{ background:var(--surface-soft); }
+.notification-bell__item--unread:hover{ background:var(--surface-card); }
+.notification-bell__mark-all{ color:var(--ink); text-decoration:underline; }
+
+/* ---- Contenido ---- */
+.app-main{ background:var(--canvas); padding:40px 48px; }
+.page-header-icon{ border-radius:var(--radius-md); background:var(--surface-card) !important; color:var(--ink); }
+
+.view-toggle{ border:none; background:var(--surface-soft); border-radius:9999px; padding:4px; gap:2px; }
+.view-toggle__btn{ border:none !important; background:transparent; color:var(--muted); border-radius:9999px; padding:8px 16px; font-weight:500; }
+.view-toggle__btn--active{ background:var(--canvas); color:var(--ink); box-shadow:var(--shadow-1); }
+.view-toggle__btn:hover:not(.view-toggle__btn--active){ background:transparent; color:var(--ink); }
+
+/* Tarjetas: gris suave sin sombra (feature-card) o blanco con hairline */
+.home-card{ background:var(--surface-card); border:none; border-radius:var(--radius-lg); align-items:flex-start; text-align:left; padding:32px; }
+.home-card:hover{ background:var(--canvas); box-shadow:var(--shadow-2); border:none; transform:none; outline:1px solid var(--hairline); }
+.home-card-icon{ border-radius:var(--radius-md); background:var(--canvas) !important; color:var(--ink); width:44px; height:44px; box-shadow:var(--shadow-1); }
+.home-card-title{ font-size:18px; }
+
+.form-card,.organism-table-card,.structure-panel,.my-task-card,.dash-panel,.dash-kpi,.dash-placeholder,
+.instrument-card,.planning-section{
+  border:1px solid var(--hairline); border-radius:var(--radius-lg); background:var(--canvas); box-shadow:none;
+}
+.dash-kpi--main{ border-color:var(--hairline); border-width:1px; background:var(--surface-card); }
+.dash-kpi--alert{ border-left-width:1px; border-color:#FCA5A5; }
+.dash-kpi--action:hover{ border-color:var(--ink); transform:none; }
+.dash-kpi-label{ color:var(--muted); font-weight:600; letter-spacing:.06em; }
+.dash-meter{ background:var(--surface-strong); }
+.dash-meter-fill{ background:var(--ink); }
+.fin-pct-fill{ background:var(--ink); }
+
+/* Tablas: hairlines, cabecera suave */
+table.users-table th,table.schedule-table th,table.pac-tree-table th,.consolidated-table th,.annual-table th{
+  background:var(--surface-soft); color:var(--muted); font-weight:600; border-bottom:1px solid var(--hairline);
+}
+table.users-table td,table.schedule-table td,table.pac-tree-table td{ border-bottom:1px solid var(--hairline-soft); }
+table.pac-tree-table tr:hover td,.tree-row--clickable:hover td{ background:var(--surface-soft); }
+.task-query-table thead{ background:var(--surface-soft); color:var(--muted); }
+.tree-name{ color:var(--ink); }
+.tree-state-dot.active::before{ background:var(--brand-accent); }
+.row-actions button,.followup-history-evidence,.my-task-toggle-history{ color:var(--ink); }
+.row-actions button{ text-decoration:underline; text-underline-offset:3px; }
+.row-actions button.danger{ color:var(--danger); }
+
+.structure-item.selected{ background:var(--surface-card); box-shadow:inset 0 0 0 1px var(--hairline); }
+.pac-tree-level-chip.active{ background:var(--ink); border-color:var(--ink); color:#fff; }
+.pac-tree-toolbar{ background:var(--surface-soft); }
+.report-tab--active{ color:var(--ink); border-color:var(--ink); }
+.goal-activity-summary{ background:var(--surface-card); color:var(--body); }
+
+/* Modales y panel lateral */
+.modal-overlay,.modal-backdrop{ background:rgba(17,17,17,.4); }
+.modal-card,.modal-content{ border-radius:var(--radius-xl); box-shadow:var(--shadow-2); border:1px solid var(--hairline); }
+.detail-panel{ box-shadow:var(--shadow-2); border-left:1px solid var(--hairline); }
+.export-dropdown__menu,.pac-tree-add-menu{ border:1px solid var(--hairline); border-radius:var(--radius-md); box-shadow:var(--shadow-2); }
+
+/* Alertas */
+.molecule-alert,.alert-error,.alert-success{ border-radius:var(--radius-sm); font-weight:500; }
+
+/* Foco accesible */
+:focus-visible{ outline:2px solid var(--ink); outline-offset:2px; }

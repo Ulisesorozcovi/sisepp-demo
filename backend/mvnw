@@ -1,0 +1,50 @@
+#!/bin/sh
+# Maven Wrapper script for Unix/Linux/macOS
+# https://maven.apache.org/wrapper/
+
+set -e
+
+if [ -z "$MAVEN_WRAPPER_JAR" ]; then
+    MAVEN_WRAPPER_JAR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 && pwd )/.mvn/wrapper/maven-wrapper.jar"
+fi
+
+if [ -z "$MAVEN_WRAPPER_PROPERTIES" ]; then
+    MAVEN_WRAPPER_PROPERTIES="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 && pwd )/.mvn/wrapper/maven-wrapper.properties"
+fi
+
+WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
+
+# Determine the project base directory
+BASEDIR=$( cd -- "$(dirname "$0")" >/dev/null 2>&1 && pwd )
+
+# Read distributionUrl from maven-wrapper.properties
+if [ -f "$MAVEN_WRAPPER_PROPERTIES" ]; then
+    DISTRIBUTION_URL=$(grep 'distributionUrl' "$MAVEN_WRAPPER_PROPERTIES" | cut -d'=' -f2-)
+fi
+
+# Fall back to downloading the wrapper jar if it doesn't exist
+if [ ! -f "$MAVEN_WRAPPER_JAR" ]; then
+    WRAPPER_URL=$(grep 'wrapperUrl' "$MAVEN_WRAPPER_PROPERTIES" | cut -d'=' -f2-)
+    if command -v wget > /dev/null; then
+        wget -q -O "$MAVEN_WRAPPER_JAR" "$WRAPPER_URL"
+    elif command -v curl > /dev/null; then
+        curl -sL -o "$MAVEN_WRAPPER_JAR" "$WRAPPER_URL"
+    else
+        echo "Error: Neither wget nor curl found. Cannot download Maven wrapper." >&2
+        exit 1
+    fi
+fi
+
+# Use JAVA_HOME if set, otherwise rely on PATH
+if [ -n "$JAVA_HOME" ] ; then
+    JAVACMD="$JAVA_HOME/bin/java"
+else
+    JAVACMD=java
+fi
+
+exec "$JAVACMD" \
+    $MAVEN_OPTS \
+    $MAVEN_DEBUG_OPTS \
+    -classpath "$MAVEN_WRAPPER_JAR" \
+    "-Dmaven.multiModuleProjectDirectory=${BASEDIR}" \
+    ${WRAPPER_LAUNCHER} "$@"

@@ -1,0 +1,128 @@
+/* --- Contenedor principal --- */
+.gantt-container {
+  border: 1px solid var(--color-gray-200, #e5e7eb);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-white, #fff);
+}
+
+/* --- Toolbar de zoom --- */
+.gantt-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-gray-200, #e5e7eb);
+  background: var(--color-gray-50, #f9fafb);
+}
+
+.gantt-toolbar__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gray-600, #4b5563);
+  margin-right: 8px;
+}
+
+.gantt-toolbar__btn {
+  padding: 4px 12px;
+  border: 1px solid var(--color-gray-300, #d1d5db);
+  border-radius: 6px;
+  background: var(--color-white, #fff);
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--color-gray-700, #374151);
+  transition: all 0.15s;
+}
+
+.gantt-toolbar__btn:hover {
+  background: var(--color-gray-100, #f3f4f6);
+}
+
+.gantt-toolbar__btn--active {
+  background: var(--color-blue-600, #2563eb);
+  color: white;
+  border-color: var(--color-blue-600, #2563eb);
+}
+
+/* --- Tabla izquierda (custom) --- */
+.gantt-table-header {
+  display: grid;
+  grid-template-columns: 1fr 140px 70px;
+  padding: 8px 12px;
+  background: var(--color-gray-100, #f3f4f6);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gray-600, #4b5563);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-gray-200, #e5e7eb);
+  height: 42px;
+  align-items: center;
+}
+
+.gantt-table-body {
+  /* container for rows */
+}
+
+.gantt-table-row {
+  display: grid;
+  grid-template-columns: 1fr 140px 70px;
+  padding: 0 12px;
+  height: 42px;
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray-100, #f3f4f6);
+  font-size: 0.8rem;
+}
+
+.gantt-table-row:hover {
+  background: var(--color-gray-50, #f9fafb);
+}
+
+.gantt-table-row--activity {
+  background: var(--color-gray-50, #f9fafb);
+  font-weight: 600;
+}
+
+.gantt-table-row__cell--name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gantt-table-row__cell--assigned {
+  font-size: 0.75rem;
+  color: var(--color-gray-500, #6b7280);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gantt-table-row__cell--status {
+  text-align: center;
+}
+
+/* --- Badge de progreso --- */
+.gantt-status-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.7rem;
+  min-width: 38px;
+  text-align: center;
+}
+
+/* --- Estados vacios / carga --- */
+.gantt-loading,
+.gantt-empty,
+.gantt-error {
+  padding: 48px;
+  text-align: center;
+  color: var(--color-gray-500, #6b7280);
+  font-size: 0.9rem;
+}
+
+.gantt-error {
+  color: var(--color-red-600, #dc2626);
+}

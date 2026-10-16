@@ -1,0 +1,44 @@
+# SISEPP Backend — CI: compila y corre los tests (unitarios + integración).
+# Los tests de integración usan Testcontainers; ubuntu-latest ya trae Docker.
+name: Backend CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths: ['backend/**', '.github/workflows/backend-ci.yml']
+  push:
+    branches: [main]
+    paths: ['backend/**', '.github/workflows/backend-ci.yml']
+
+concurrency:
+  group: backend-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test (JDK 17)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+          cache-dependency-path: backend/pom.xml
+
+      # El bit de ejecución se pierde al crear el repo desde Windows.
+      - name: Make mvnw executable
+        run: chmod +x mvnw
+
+      # Surefire está configurado para incluir *Test, *Tests y *IT.
+      - name: Test
+        run: ./mvnw test -B --no-transfer-progress

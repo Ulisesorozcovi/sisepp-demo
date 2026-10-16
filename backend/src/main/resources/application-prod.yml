@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: false
+  flyway:
+    enabled: true
+
+sisepp:
+  mail:
+    enabled: true
+
+logging:
+  level:
+    org.hibernate.SQL: warn
+    dev.demo.sisepp: info

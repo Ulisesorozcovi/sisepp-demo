@@ -1,0 +1,9 @@
+# Perfil de desarrollo: ademas de las migraciones de esquema aplica las semillas
+# de usuarios de prueba (db/seed-dev). Su contrasena NO esta en el repositorio:
+# se define con SISEPP_SEED_PASSWORD (sin valor por defecto; si falta, Flyway
+# falla al arrancar).
+spring:
+  flyway:
+    locations: classpath:db/migration,classpath:db/seed-dev
+    placeholders:
+      seed_password: ${SISEPP_SEED_PASSWORD}

@@ -1,0 +1,17 @@
+INSERT INTO measurement_units (code, name) VALUES
+(1, 'Área'), (2, 'µg/m³'), (3, 'Acciones'), (4, 'Actos Administrativos'),
+(5, 'Campañas'), (6, 'Capacitaciones'), (7, 'CAV'), (8, 'Comités'),
+(9, 'Corriente hídrica'), (10, 'Cuenca'), (11, 'Días'), (12, 'Divulgaciones'),
+(13, 'Documentos'), (14, 'Especies'), (15, 'Estaciones'), (16, 'Estudios'),
+(17, 'Familias'), (18, 'Hectáreas'), (19, 'Hectáreas de cuerpos de agua'),
+(20, 'Kilogramo'), (21, 'Kilómetros'), (22, 'Kilómetros cuadrados'),
+(23, 'Longitud'), (24, 'Mapa'), (25, 'Metros lineales'),
+(26, 'Metros cuadrados'), (27, 'Metros cúbicos'), (28, 'Municipios'),
+(29, 'Número'), (30, 'Número de árboles'),
+(31, 'Número de centros de atención y valoración'),
+(32, 'Número de documentos'), (33, 'Número de esquemas de pago'),
+(34, 'Número de Fuentes Hídricas'), (35, 'Número de Personas'),
+(36, 'Obras'), (37, 'Operativos'), (38, 'Organizaciones'),
+(39, 'Piezas publicitarias'), (40, 'Plan'), (41, 'Plan de Manejo'),
+(42, 'Porcentaje'), (43, 'Predios'), (44, 'Programas'),
+(45, 'Protocolo'), (46, 'Proyecto');

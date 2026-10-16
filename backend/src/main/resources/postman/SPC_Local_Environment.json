@@ -1,0 +1,11 @@
+{
+  "id": "spc-local-env",
+  "name": "SPC - Local",
+  "values": [
+    { "key": "base_url", "value": "http://localhost:8080", "enabled": true, "type": "default" },
+    { "key": "token", "value": "", "enabled": true, "type": "default" },
+    { "key": "admin_email", "value": "admin@example.com", "enabled": true, "type": "default" },
+    { "key": "admin_password", "value": "<CAMBIAR>", "enabled": true, "type": "default" }
+  ],
+  "_postman_variable_scope": "environment"
+}

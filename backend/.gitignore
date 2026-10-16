@@ -1,0 +1,20 @@
+# Build
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+*.log
+application-local.yml
+
+# Piloto
+snapshots/
+participantes.csv
